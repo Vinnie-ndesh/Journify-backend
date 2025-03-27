@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "bf7b4c16-238a-493d-bc19-6a9c89692d66",
+		"name": "Journify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22849648"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"firstName\":\"John\",\n    \"lastName\":\"Doe\",\n    \"email\":\"test@mailinator.com\",\n    \"password\":\"Test@123\"\n\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/users/register",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@mailinator.com\",\n    \"password\": \"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/users/login",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"Doe@mislinator.com\",\n    \"password\": \"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/users/refresh-token",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"firstName\":\"John\",\n    \"lastName\":\"Doe Updated\",\n    \"email\":\"Doe@mislinator.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/users/update-profile",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"update-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"Doe@mislinator.com\",\n    \"password\": \"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/users/profile",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Journal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test Title\",\n    \"content\": \"The second round will be a take-home assignment. You will be asked to create a journalling application. The assignment will give us a good sense of your skill sets and how well you can carry the development of this application. This assignment is due 10 days from this email, and please share whatever you can (it is ok to not finish it) by the deadline.\",\n    \"categoryId\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/create-journal",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"create-journal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Journal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test Title\",\n    \"content\": \"Test@123 body edited\",\n    \"categoryId\":11\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/edit-journal/3",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"edit-journal",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "My Journal",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test Title\",\n    \"content\": \"Test@123 body\",\n    \"categoryId\":100000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/my-journals?page=1",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"my-journals"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Journal By Category Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test Title\",\n    \"content\": \"Test@123 body\",\n    \"categoryId\":100000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/journals/12",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"journals",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Test Title\",\n    \"content\": \"Test@123 body\",\n    \"categoryId\":100000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/categories",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Journal",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/delete-journal/2",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"delete-journal",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analysis",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl }}/v1/journals/analysis",
+					"host": [
+						"{{baseUrl }}"
+					],
+					"path": [
+						"v1",
+						"journals",
+						"analysis"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl ",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
